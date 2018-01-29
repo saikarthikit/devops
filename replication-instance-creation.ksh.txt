@@ -1,0 +1,12 @@
+#!/bin/bash
+
+replication_instance_name =my-automation-db
+instance_allocated_storage =5
+instance_type =dms.t2.micro
+availability_zone =ap-south-1a
+export replication_instance_name
+export instance_allocated_storage
+export instance_type
+export availability_zone
+
+aws dms create-replication-instance --replication-instance-identifier "replication_instance_name =$replication_instance_name" --allocated-storage "instance_allocated_storage =$instance_allocated_storage" --replication-instance-class "instance_type =$instance_type" --availability-zone "availability_zone =$availability_zone" --no-multi-az --publicly-accessible
